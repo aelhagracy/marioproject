@@ -9,13 +9,12 @@
 
 class GameScene : public QGraphicsScene
 {
-    Q_OBJECT   // REQUIRED for signals/slots
+    Q_OBJECT
 public:
     GameScene();
 
 signals:
-    void gameFinished();   // NEW signal emitted when Mario leaves the scene
-
+    void gameFinished();   // end game
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
@@ -28,9 +27,9 @@ private:
     InputHandler* input;
     QTimer* loop;
 
-    // NEW: Scene size for checking end-of-level
+    // end level
     int sceneWidth;
     int sceneHeight;
 };
 
-#endif // GAMESCENE_H
+#endif
