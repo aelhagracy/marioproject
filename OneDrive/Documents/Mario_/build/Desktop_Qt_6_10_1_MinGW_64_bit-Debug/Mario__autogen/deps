@@ -144,6 +144,7 @@ Mario__autogen/timestamp: \
 	C:/Qt/6.10.1/mingw_64/include/QtCore/qversiontagging.h \
 	C:/Qt/6.10.1/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Qt/6.10.1/mingw_64/include/QtCore/qyieldcpu.h \
+	C:/Qt/6.10.1/mingw_64/include/QtGui/QFont \
 	C:/Qt/6.10.1/mingw_64/include/QtGui/QKeyEvent \
 	C:/Qt/6.10.1/mingw_64/include/QtGui/QTransform \
 	C:/Qt/6.10.1/mingw_64/include/QtGui/qbrush.h \
@@ -179,6 +180,7 @@ Mario__autogen/timestamp: \
 	C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
 	C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsScene \
+	C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsTextItem \
 	C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
 	C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
 	C:/Qt/6.10.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
@@ -594,4 +596,6 @@ Mario__autogen/timestamp: \
 	C:/Users/boodi/OneDrive/Documents/Mario_/player.cpp \
 	C:/Users/boodi/OneDrive/Documents/Mario_/player.h \
 	C:/Users/boodi/OneDrive/Documents/Mario_/resources.qrc \
+	C:/Users/boodi/OneDrive/Documents/Mario_/score.cpp \
+	C:/Users/boodi/OneDrive/Documents/Mario_/score.h \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

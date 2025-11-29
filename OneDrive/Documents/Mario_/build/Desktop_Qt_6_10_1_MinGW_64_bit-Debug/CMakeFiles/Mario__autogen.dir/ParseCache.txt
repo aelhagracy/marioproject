@@ -147,6 +147,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/gamescene.h
  mdp:C:/Qt/6.10.1/mingw_64/include/QtCore/qversiontagging.h
  mdp:C:/Qt/6.10.1/mingw_64/include/QtCore/qxptype_traits.h
  mdp:C:/Qt/6.10.1/mingw_64/include/QtCore/qyieldcpu.h
+ mdp:C:/Qt/6.10.1/mingw_64/include/QtGui/QFont
  mdp:C:/Qt/6.10.1/mingw_64/include/QtGui/QKeyEvent
  mdp:C:/Qt/6.10.1/mingw_64/include/QtGui/QTransform
  mdp:C:/Qt/6.10.1/mingw_64/include/QtGui/qbrush.h
@@ -182,6 +183,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/gamescene.h
  mdp:C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsPixmapItem
  mdp:C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsScene
+ mdp:C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsTextItem
  mdp:C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsitem.h
  mdp:C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsscene.h
  mdp:C:/Qt/6.10.1/mingw_64/include/QtWidgets/qtwidgets-config.h
@@ -404,6 +406,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/gamescene.h
  mdp:C:/Users/boodi/OneDrive/Documents/Mario_/gamescene.h
  mdp:C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.h
  mdp:C:/Users/boodi/OneDrive/Documents/Mario_/player.h
+ mdp:C:/Users/boodi/OneDrive/Documents/Mario_/score.h
 C:/Users/boodi/OneDrive/Documents/Mario_/player.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.10.1/mingw_64/include/QtCore/QObject
@@ -1092,3 +1095,5 @@ C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.h
 C:/Users/boodi/OneDrive/Documents/Mario_/gamescene.cpp
 C:/Users/boodi/OneDrive/Documents/Mario_/gameview.cpp
 C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.cpp
+C:/Users/boodi/OneDrive/Documents/Mario_/score.h
+C:/Users/boodi/OneDrive/Documents/Mario_/score.cpp

@@ -10,4 +10,4 @@ public:
     GameView(QGraphicsScene* scene);
 };
 
-#endif // GAMEVIEW_H
+#endif

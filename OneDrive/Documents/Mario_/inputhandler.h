@@ -17,4 +17,4 @@ private:
     Player* player;
 };
 
-#endif // INPUTHANDLER_H
+#endif

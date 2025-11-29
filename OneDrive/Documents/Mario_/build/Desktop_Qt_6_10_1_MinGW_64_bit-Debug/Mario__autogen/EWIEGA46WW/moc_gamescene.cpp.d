@@ -145,6 +145,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/6.10.1/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.10.1/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.10.1/mingw_64/include/QtCore/qyieldcpu.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/QFont \
   C:/Qt/6.10.1/mingw_64/include/QtGui/QKeyEvent \
   C:/Qt/6.10.1/mingw_64/include/QtGui/QTransform \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qbrush.h \
@@ -180,6 +181,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsScene \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsTextItem \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
@@ -399,4 +401,5 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.h \
-  C:/Users/boodi/OneDrive/Documents/Mario_/player.h
+  C:/Users/boodi/OneDrive/Documents/Mario_/player.h \
+  C:/Users/boodi/OneDrive/Documents/Mario_/score.h

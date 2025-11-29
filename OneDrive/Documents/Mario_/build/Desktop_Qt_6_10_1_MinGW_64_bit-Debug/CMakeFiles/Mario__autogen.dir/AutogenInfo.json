@@ -345,6 +345,12 @@
 			"MU",
 			"EWIEGA46WW/moc_player.cpp",
 			null
+		],
+		[
+			"C:/Users/boodi/OneDrive/Documents/Mario_/score.h",
+			"MU",
+			"EWIEGA46WW/moc_score.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -427,7 +433,8 @@
 			null
 		],
 		[ "C:/Users/boodi/OneDrive/Documents/Mario_/main.cpp", "MU", null ],
-		[ "C:/Users/boodi/OneDrive/Documents/Mario_/player.cpp", "MU", null ]
+		[ "C:/Users/boodi/OneDrive/Documents/Mario_/player.cpp", "MU", null ],
+		[ "C:/Users/boodi/OneDrive/Documents/Mario_/score.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

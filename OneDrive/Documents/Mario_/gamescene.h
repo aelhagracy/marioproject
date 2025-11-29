@@ -4,8 +4,10 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QKeyEvent>
+#include <QGraphicsTextItem>     // ⬅ Needed for on–screen text
 #include "player.h"
 #include "inputhandler.h"
+#include "score.h"
 
 class GameScene : public QGraphicsScene
 {
@@ -14,7 +16,8 @@ public:
     GameScene();
 
 signals:
-    void gameFinished();   // end game
+    void gameFinished();
+
 protected:
     void keyPressEvent(QKeyEvent *event) override;
     void keyReleaseEvent(QKeyEvent *event) override;
@@ -26,6 +29,11 @@ private:
     Player* player;
     InputHandler* input;
     QTimer* loop;
+    Score* score;
+    int lastX = 0;
+
+
+    QGraphicsTextItem* scoreText;
 
     // end level
     int sceneWidth;
