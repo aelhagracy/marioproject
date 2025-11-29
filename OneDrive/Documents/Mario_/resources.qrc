@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/assets"/>
+    <qresource prefix="/">
+        <file>images/scene.png</file>
+        <file>images/mario.png</file>
+    </qresource>
+</RCC>
