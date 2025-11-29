@@ -31,6 +31,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         gamescene.h gamescene.cpp
         gameview.h gameview.cpp
         score.h score.cpp
+        platform.h platform.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Mario_ APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

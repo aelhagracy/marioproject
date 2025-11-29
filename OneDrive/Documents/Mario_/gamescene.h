@@ -4,7 +4,7 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QKeyEvent>
-#include <QGraphicsTextItem>     // ⬅ Needed for on–screen text
+#include <QGraphicsTextItem> // Needed for on-screen text
 #include "player.h"
 #include "inputhandler.h"
 #include "score.h"
@@ -16,7 +16,7 @@ public:
     GameScene();
 
 signals:
-    void gameFinished();
+    void gameFinished();   // end game
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
@@ -32,12 +32,17 @@ private:
     Score* score;
     int lastX = 0;
 
-
     QGraphicsTextItem* scoreText;
 
     // end level
     int sceneWidth;
     int sceneHeight;
+
+    // static for pipe & block tracking
+    static int farthestPipe;
+    static int farthestB1;
+    static int farthestB2;
 };
 
 #endif
+

@@ -3,5 +3,7 @@
     <qresource prefix="/">
         <file>images/scene.png</file>
         <file>images/mario.png</file>
+        <file>images/brick.jpg</file>
+        <file>images/pipe.jpg</file>
     </qresource>
 </RCC>
