@@ -167,7 +167,7 @@ void GameScene::onPlayerDied()
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(nullptr,
                                   "Game Over",
-                                  "You died! What do you want to do?",
+                                  "You died! Would you like to retry again?",
                                   QMessageBox::Yes | QMessageBox::No,
                                   QMessageBox::Yes);
 
