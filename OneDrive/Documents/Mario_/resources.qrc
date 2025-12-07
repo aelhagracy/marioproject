@@ -6,5 +6,6 @@
         <file>images/brick.jpg</file>
         <file>images/pipe.png</file>
         <file>images/spike.png</file>
+        <file>images/enemy.png</file>
     </qresource>
 </RCC>

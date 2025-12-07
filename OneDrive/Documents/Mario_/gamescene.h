@@ -34,6 +34,7 @@ private slots:
 private:
     void spawnSpikes();
     void checkSpikeCollisions(); // check player-spike collisions
+    void checkEnemyCollisions();
 
 private:
     Player* player;

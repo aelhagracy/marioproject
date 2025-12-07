@@ -1,0 +1,30 @@
+{
+	"BUILD_DIR" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug/Mario__autogen",
+	"CMAKE_BINARY_DIR" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_",
+	"CMAKE_SOURCE_DIR" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug/Mario__autogen/include",
+	"INPUTS" : 
+	[
+		"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/images/pipe.png",
+		"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/images/scene.png",
+		"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/images/enemy.png",
+		"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/images/mario.png",
+		"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/images/brick.jpg",
+		"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/images/spike.png"
+	],
+	"LOCK_FILE" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug/CMakeFiles/Mario__autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/Users/mariamelshimi/Qt/6.10.0/macos/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug/CMakeFiles/Mario__autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

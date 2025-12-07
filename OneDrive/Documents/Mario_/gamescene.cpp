@@ -1,5 +1,6 @@
 #include "gamescene.h"
 #include "platform.h"
+#include "enemy.h"
 #include <QGraphicsPixmapItem>
 #include <QGraphicsView>
 #include <QKeyEvent>
@@ -34,6 +35,16 @@ GameScene::GameScene()
     platform* b4 = new platform(100, 40, ":/images/brick.jpg"); b4->setPos(1600, 290); addItem(b4);
     platform* b5 = new platform(90, 40, ":/images/brick.jpg"); b5->setPos(2000, 280); addItem(b5);
     platform* b6 = new platform(100, 40, ":/images/brick.jpg"); b6->setPos(2500, 300); addItem(b6);
+    platform* b7 = new platform(90, 40, ":/images/brick.jpg"); b7->setPos(3000, 300); addItem(b7);
+    platform* b8 = new platform(100, 40, ":/images/brick.jpg"); b8->setPos(3600, 290); addItem(b8);
+    platform* b9 = new platform(90, 40, ":/images/brick.jpg"); b9->setPos(4100, 300); addItem(b9);
+    platform* b10 = new platform(100, 40, ":/images/brick.jpg"); b10->setPos(4700, 290); addItem(b10);
+
+    //Enemies
+    Enemy* enemy1 = new Enemy(); enemy1->setPos(400, 404); addItem(enemy1);
+    Enemy* enemy2 = new Enemy(); enemy2->setPos(1700, 404); addItem(enemy2);
+    Enemy* enemy3 = new Enemy(); enemy3->setPos(2200, 404); addItem(enemy3);
+    Enemy* enemy4 = new Enemy(); enemy4->setPos(2800, 404); addItem(enemy4);
 
     // Score
     score = new Score();
@@ -96,8 +107,9 @@ void GameScene::updateGame()
     player->applyGravity();
     player->updatePosition();
 
-    // Check collisions with spikes
+    // Check collisions with spikes and enemies
     checkSpikeCollisions();
+    checkEnemyCollisions();
 
     // Score progress
     int dx = player->x() - lastX;
@@ -153,6 +165,35 @@ void GameScene::checkSpikeCollisions()
     }
 }
 
+//Check enemy collisions with player + handle lives
+void GameScene::checkEnemyCollisions()
+{
+    if (invincible) return;
+
+    QList<QGraphicsItem*> collidingItemsList = player->collidingItems();
+    for (auto item : collidingItemsList) {
+        if (dynamic_cast<Enemy*>(item)) {
+
+            // Start invincibility immediately
+            invincible = true;
+            invincibleTimer->start(1000); // 1 second
+
+            // Deduct life
+            playerLives->decrease();
+
+            if (playerLives->getLives() <= 0) {
+                onPlayerDied();
+                return;
+            } else {
+                // Reset player slightly above current to avoid repeated collision
+                player->setPos(player->x(), player->y() - 50);
+            }
+
+            break; // Only handle one enemy per frame
+        }
+    }
+}
+
 // End invincibility
 void GameScene::endInvincibility()
 {
@@ -204,3 +245,6 @@ void GameScene::onPlayerDied()
         }
     }
 }
+
+
+
