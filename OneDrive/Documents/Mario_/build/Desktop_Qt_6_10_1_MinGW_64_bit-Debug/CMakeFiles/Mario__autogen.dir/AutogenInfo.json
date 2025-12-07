@@ -341,6 +341,12 @@
 			null
 		],
 		[
+			"C:/Users/boodi/OneDrive/Documents/Mario_/life.h",
+			"MU",
+			"EWIEGA46WW/moc_life.cpp",
+			null
+		],
+		[
 			"C:/Users/boodi/OneDrive/Documents/Mario_/platform.h",
 			"MU",
 			"EWIEGA46WW/moc_platform.cpp",
@@ -356,6 +362,12 @@
 			"C:/Users/boodi/OneDrive/Documents/Mario_/score.h",
 			"MU",
 			"EWIEGA46WW/moc_score.cpp",
+			null
+		],
+		[
+			"C:/Users/boodi/OneDrive/Documents/Mario_/spike.h",
+			"MU",
+			"EWIEGA46WW/moc_spike.cpp",
 			null
 		]
 	],
@@ -438,10 +450,12 @@
 			"MU",
 			null
 		],
+		[ "C:/Users/boodi/OneDrive/Documents/Mario_/life.cpp", "MU", null ],
 		[ "C:/Users/boodi/OneDrive/Documents/Mario_/main.cpp", "MU", null ],
 		[ "C:/Users/boodi/OneDrive/Documents/Mario_/platform.cpp", "MU", null ],
 		[ "C:/Users/boodi/OneDrive/Documents/Mario_/player.cpp", "MU", null ],
-		[ "C:/Users/boodi/OneDrive/Documents/Mario_/score.cpp", "MU", null ]
+		[ "C:/Users/boodi/OneDrive/Documents/Mario_/score.cpp", "MU", null ],
+		[ "C:/Users/boodi/OneDrive/Documents/Mario_/spike.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

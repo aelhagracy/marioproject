@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-5fb6402531b8ff83d0f7.json",
+					"jsonFile" : "directory-.-Debug-bf1c1d11fcd21000174e.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Mario_::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Mario_-Debug-efe6fc0ce1bea14871bb.json",
+					"jsonFile" : "target-Mario_-Debug-17af0466473d120807de.json",
 					"name" : "Mario_",
 					"projectIndex" : 0
 				},

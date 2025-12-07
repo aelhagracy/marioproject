@@ -4,6 +4,7 @@
         <file>images/scene.png</file>
         <file>images/mario.png</file>
         <file>images/brick.jpg</file>
-        <file>images/pipe.jpg</file>
+        <file>images/pipe.png</file>
+        <file>images/spike.png</file>
     </qresource>
 </RCC>

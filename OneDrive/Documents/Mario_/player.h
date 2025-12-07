@@ -15,14 +15,16 @@ public:
     void moveRight();
     void stop();
     void jump();
-
     void applyGravity();
     void updatePosition();
+
+signals:
+    void hitSpike();   // Game over
 
 private:
     float vx = 0;
     float vy = 0;
-    bool onGround = true;
+    bool onGround = false;
 };
 
-#endif
+#endif // PLAYER_H

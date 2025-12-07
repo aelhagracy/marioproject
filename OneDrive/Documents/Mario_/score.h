@@ -13,6 +13,8 @@ public:
     void setScore(int value);
     int getScore() const;
 
+    void reset();  // <-- add reset method
+
 private:
     int score;
 };

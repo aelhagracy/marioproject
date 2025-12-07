@@ -9,10 +9,11 @@
 	"INCLUDE_DIR" : "C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/Mario__autogen/include",
 	"INPUTS" : 
 	[
+		"C:/Users/boodi/OneDrive/Documents/Mario_/images/pipe.png",
 		"C:/Users/boodi/OneDrive/Documents/Mario_/images/scene.png",
 		"C:/Users/boodi/OneDrive/Documents/Mario_/images/mario.png",
 		"C:/Users/boodi/OneDrive/Documents/Mario_/images/brick.jpg",
-		"C:/Users/boodi/OneDrive/Documents/Mario_/images/pipe.jpg"
+		"C:/Users/boodi/OneDrive/Documents/Mario_/images/spike.png"
 	],
 	"LOCK_FILE" : "C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/Mario__autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

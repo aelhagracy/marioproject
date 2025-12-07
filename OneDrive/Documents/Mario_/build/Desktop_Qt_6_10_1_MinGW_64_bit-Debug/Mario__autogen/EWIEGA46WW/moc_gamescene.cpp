@@ -41,14 +41,23 @@ template <> constexpr inline auto GameScene::qt_create_metaobjectdata<qt_meta_ta
         "GameScene",
         "gameFinished",
         "",
-        "updateGame"
+        "playerDied",
+        "updateGame",
+        "onPlayerDied",
+        "endInvincibility"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'gameFinished'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'playerDied'
+        QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'updateGame'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onPlayerDied'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'endInvincibility'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -73,12 +82,17 @@ void GameScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->gameFinished(); break;
-        case 1: _t->updateGame(); break;
+        case 1: _t->playerDied(); break;
+        case 2: _t->updateGame(); break;
+        case 3: _t->onPlayerDied(); break;
+        case 4: _t->endInvincibility(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (GameScene::*)()>(_a, &GameScene::gameFinished, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (GameScene::*)()>(_a, &GameScene::playerDied, 1))
             return;
     }
 }
@@ -102,14 +116,14 @@ int GameScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 5;
     }
     return _id;
 }
@@ -118,5 +132,11 @@ int GameScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void GameScene::gameFinished()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void GameScene::playerDied()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

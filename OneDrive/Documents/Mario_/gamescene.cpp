@@ -1,70 +1,85 @@
-#include <cstdlib>
 #include "gamescene.h"
 #include "platform.h"
 #include <QGraphicsPixmapItem>
 #include <QGraphicsView>
 #include <QKeyEvent>
-#include "score.h"
+#include <QRandomGenerator>
+#include <QMessageBox>
+
+int GameScene::farthestSpike = 1200;
 
 GameScene::GameScene()
 {
-    // background size
+    // Scene dimensions
     sceneWidth = 6000;
     sceneHeight = 500;
-
     setSceneRect(0, 0, sceneWidth, sceneHeight);
 
-    // image
+    // Background
     addItem(new QGraphicsPixmapItem(
         QPixmap(":/images/scene.png").scaled(sceneWidth, sceneHeight)
         ));
 
-    // player
+    // Player
     player = new Player();
     addItem(player);
-
-    // player spawn pos
     player->setPos(100, -420);
 
     input = new InputHandler(player);
 
-    // floating blocks
-    platform* float_b1 = new platform(90, 40, ":images/brick.jpg");
-    float_b1->setPos(300, 300);
-    addItem(float_b1);
+    // Floating platforms
+    platform* b1 = new platform(90, 40, ":/images/brick.jpg"); b1->setPos(300, 300); addItem(b1);
+    platform* b2 = new platform(100, 40, ":/images/brick.jpg"); b2->setPos(700, 290); addItem(b2);
+    platform* b3 = new platform(90, 40, ":/images/brick.jpg"); b3->setPos(1100, 300); addItem(b3);
+    platform* b4 = new platform(100, 40, ":/images/brick.jpg"); b4->setPos(1600, 290); addItem(b4);
+    platform* b5 = new platform(90, 40, ":/images/brick.jpg"); b5->setPos(2000, 280); addItem(b5);
+    platform* b6 = new platform(100, 40, ":/images/brick.jpg"); b6->setPos(2500, 300); addItem(b6);
 
-    platform* float_b2 = new platform(100, 40, ":images/brick.jpg");
-    float_b2->setPos(700, 290);
-    addItem(float_b2);
-
-    platform* float_b3 = new platform(90, 40, ":images/brick.jpg");
-    float_b3->setPos(1100, 300);
-    addItem(float_b3);
-
-    platform* float_b4 = new platform(100, 40, ":images/brick.jpg");
-    float_b4->setPos(1600, 290);
-    addItem(float_b4);
-
-    platform* float_b5 = new platform(90, 40, ":images/brick.jpg");
-    float_b5->setPos(2000, 280);
-    addItem(float_b5);
-
-    platform* float_b6 = new platform(100, 40, ":images/brick.jpg");
-    float_b6->setPos(2500, 300);
-    addItem(float_b6);
-
-    // score
+    // Score
     score = new Score();
     addItem(score);
     score->setFlag(QGraphicsItem::ItemIgnoresTransformations);
     score->setPos(20, 20);
     lastX = player->x();
 
+    // Lives
+    playerLives = new Life(nullptr, 3);
+    addItem(playerLives);
+    playerLives->setFlag(QGraphicsItem::ItemIgnoresTransformations);
+    playerLives->setPos(150, 150);
+
+    invincible = false;
+    invincibleTimer = new QTimer(this);
+    invincibleTimer->setSingleShot(true);
+    connect(invincibleTimer, &QTimer::timeout, this, &GameScene::endInvincibility);
+
+    // Spawn initial spikes
+    spawnSpikes();
+
+    // Main loop
     loop = new QTimer(this);
     connect(loop, &QTimer::timeout, this, &GameScene::updateGame);
     loop->start(16);
 }
 
+// Spawn spikes randomly
+void GameScene::spawnSpikes()
+{
+    int minX = 600;
+    int maxX = sceneWidth - 200;
+    int spikesCount = 3;
+
+    for (int i = 0; i < spikesCount; ++i)
+    {
+        Spike* spike = new Spike();
+        int x = QRandomGenerator::global()->bounded(minX, maxX);
+        int y = 404; // ground level
+        spike->setPos(x, y);
+        addItem(spike);
+    }
+}
+
+// Key input
 void GameScene::keyPressEvent(QKeyEvent* event)
 {
     input->keyPressed(event->key());
@@ -75,37 +90,33 @@ void GameScene::keyReleaseEvent(QKeyEvent* event)
     input->keyReleased(event->key());
 }
 
+// Main game loop
 void GameScene::updateGame()
 {
     player->applyGravity();
     player->updatePosition();
 
-    //score add
+    // Check collisions with spikes
+    checkSpikeCollisions();
+
+    // Score progress
     int dx = player->x() - lastX;
     if (dx >= 10) {
-        int points = dx / 10;
-        score->increase(points);
-        lastX += points * 10;
+        score->increase(dx / 10);
+        lastX += (dx / 10) * 10;
     }
 
-    if (!views().isEmpty())
+    // Keep score and lives fixed on screen
+    if (!views().isEmpty()) {
         score->setPos(views().first()->mapToScene(20, 20));
-
-    //platform pipes
-    int rand_space = 150 + rand() % 520;
-    if (player->x() + 900 > farthestPipe) {
-        platform* pipe = new platform(150, 120, ":images/pipe.png");
-        pipe->setPos(farthestPipe, 358);
-        addItem(pipe);
-
-        farthestPipe += rand_space + 150;
+        playerLives->setPos(views().first()->mapToScene(150, 20));
     }
 
-    // camera
+    // Camera follow
     if (!views().isEmpty())
         views().first()->centerOn(player);
 
-    // end level condition
+    // Level finish
     if (player->x() > sceneWidth - 100)
     {
         loop->stop();
@@ -113,7 +124,83 @@ void GameScene::updateGame()
     }
 }
 
-// initialize static members
-int GameScene::farthestPipe = 1200;
-int GameScene::farthestB1 = 900;
-int GameScene::farthestB2 = 1000;
+// Check for spike collisions and handle lives + invincibility
+void GameScene::checkSpikeCollisions()
+{
+    if (invincible) return;
+
+    QList<QGraphicsItem*> collidingItemsList = player->collidingItems();
+    for (auto item : collidingItemsList) {
+        if (dynamic_cast<Spike*>(item)) {
+
+            // Start invincibility immediately
+            invincible = true;
+            invincibleTimer->start(1000); // 1 second
+
+            // Deduct life
+            playerLives->decrease();
+
+            if (playerLives->getLives() <= 0) {
+                onPlayerDied();
+                return;
+            } else {
+                // Reset player slightly above current to avoid repeated collision
+                player->setPos(player->x(), player->y() - 50);
+            }
+
+            break; // Only handle one spike per frame
+        }
+    }
+}
+
+// End invincibility
+void GameScene::endInvincibility()
+{
+    invincible = false;
+}
+
+// Game over popup
+void GameScene::onPlayerDied()
+{
+    loop->stop();
+
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(nullptr,
+                                  "Game Over",
+                                  "You died! What do you want to do?",
+                                  QMessageBox::Yes | QMessageBox::No,
+                                  QMessageBox::Yes);
+
+    if (reply == QMessageBox::Yes) {
+        // Reset player and score
+        player->setPos(100, -420);
+        score->reset();
+        lastX = player->x();
+
+        // Reset lives
+        playerLives->reset();
+        invincible = false;
+
+        // Remove existing spikes
+        QList<QGraphicsItem*> itemsToRemove;
+        for (auto item : items()) {
+            if (dynamic_cast<Spike*>(item)) {
+                itemsToRemove.append(item);
+            }
+        }
+        for (auto item : itemsToRemove) {
+            removeItem(item);
+            delete item;
+        }
+
+        // Spawn new spikes
+        spawnSpikes();
+
+        // Restart game loop
+        loop->start(16);
+    } else {
+        if (!views().isEmpty()) {
+            views().first()->window()->close();
+        }
+    }
+}

@@ -25,3 +25,8 @@ int Score::getScore() const
     return score;
 }
 
+void Score::reset()   // <-- implementation
+{
+    score = 0;
+    setPlainText("Score: 0");
+}

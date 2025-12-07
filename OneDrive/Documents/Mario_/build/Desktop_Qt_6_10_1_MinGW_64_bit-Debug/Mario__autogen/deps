@@ -592,6 +592,8 @@ Mario__autogen/timestamp: \
 	C:/Users/boodi/OneDrive/Documents/Mario_/gameview.h \
 	C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.cpp \
 	C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.h \
+	C:/Users/boodi/OneDrive/Documents/Mario_/life.cpp \
+	C:/Users/boodi/OneDrive/Documents/Mario_/life.h \
 	C:/Users/boodi/OneDrive/Documents/Mario_/main.cpp \
 	C:/Users/boodi/OneDrive/Documents/Mario_/platform.cpp \
 	C:/Users/boodi/OneDrive/Documents/Mario_/platform.h \
@@ -600,4 +602,6 @@ Mario__autogen/timestamp: \
 	C:/Users/boodi/OneDrive/Documents/Mario_/resources.qrc \
 	C:/Users/boodi/OneDrive/Documents/Mario_/score.cpp \
 	C:/Users/boodi/OneDrive/Documents/Mario_/score.h \
+	C:/Users/boodi/OneDrive/Documents/Mario_/spike.cpp \
+	C:/Users/boodi/OneDrive/Documents/Mario_/spike.h \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
