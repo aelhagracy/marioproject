@@ -44,7 +44,8 @@ template <> constexpr inline auto GameScene::qt_create_metaobjectdata<qt_meta_ta
         "playerDied",
         "updateGame",
         "onPlayerDied",
-        "endInvincibility"
+        "endInvincibility",
+        "updateInvTimer"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -58,6 +59,8 @@ template <> constexpr inline auto GameScene::qt_create_metaobjectdata<qt_meta_ta
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'endInvincibility'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'updateInvTimer'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -86,6 +89,7 @@ void GameScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 2: _t->updateGame(); break;
         case 3: _t->onPlayerDied(); break;
         case 4: _t->endInvincibility(); break;
+        case 5: _t->updateInvTimer(); break;
         default: ;
         }
     }
@@ -116,14 +120,14 @@ int GameScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

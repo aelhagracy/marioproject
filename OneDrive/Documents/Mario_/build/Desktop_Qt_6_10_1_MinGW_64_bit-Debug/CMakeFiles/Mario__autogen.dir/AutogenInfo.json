@@ -317,6 +317,18 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/boodi/OneDrive/Documents/Mario_/bonusblock.h",
+			"MU",
+			"EWIEGA46WW/moc_bonusblock.cpp",
+			null
+		],
+		[
+			"C:/Users/boodi/OneDrive/Documents/Mario_/enemy.h",
+			"MU",
+			"EWIEGA46WW/moc_enemy.cpp",
+			null
+		],
+		[
 			"C:/Users/boodi/OneDrive/Documents/Mario_/game.h",
 			"MU",
 			"EWIEGA46WW/moc_game.cpp",
@@ -442,6 +454,8 @@
 	"SETTINGS_FILE" : "C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/Mario__autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Users/boodi/OneDrive/Documents/Mario_/bonusblock.cpp", "MU", null ],
+		[ "C:/Users/boodi/OneDrive/Documents/Mario_/enemy.cpp", "MU", null ],
 		[ "C:/Users/boodi/OneDrive/Documents/Mario_/game.cpp", "MU", null ],
 		[ "C:/Users/boodi/OneDrive/Documents/Mario_/gamescene.cpp", "MU", null ],
 		[ "C:/Users/boodi/OneDrive/Documents/Mario_/gameview.cpp", "MU", null ],

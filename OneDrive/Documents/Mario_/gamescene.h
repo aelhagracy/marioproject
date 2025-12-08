@@ -5,12 +5,15 @@
 #include <QTimer>
 #include <QKeyEvent>
 #include <QGraphicsTextItem>
+#include <QLCDNumber>
+#include <QGraphicsProxyWidget>
 #include "player.h"
 #include "inputhandler.h"
 #include "score.h"
 #include "spike.h"
 #include "platform.h"
 #include "Life.h"
+#include "bonusblock.h"
 
 class GameScene : public QGraphicsScene
 {
@@ -28,13 +31,15 @@ protected:
 
 private slots:
     void updateGame();
-    void onPlayerDied();         // handle spike death
+    void onPlayerDied();         // handle player death
     void endInvincibility();     // turn off invincibility
+    void updateInvTimer();       // update countdown display
 
 private:
     void spawnSpikes();
-    void checkSpikeCollisions(); // check player-spike collisions
+    void checkSpikeCollisions();
     void checkEnemyCollisions();
+    void checkBonusCollisions(); // check player-bonus collision
 
 private:
     Player* player;
@@ -52,9 +57,19 @@ private:
 
     // Lives system
     Life* playerLives;
-    QGraphicsTextItem* livesDisplay;
+
+    // Invincibility
     bool invincible = false;
     QTimer* invincibleTimer;
+
+    // Bonus
+    bonusblock* bonus;
+
+    // Invincibility timer display
+    QLCDNumber* invTimerDisplay;
+    QGraphicsProxyWidget* invTimerProxy;
+    QTimer* invCountdownTimer;
+    int invSecondsRemaining = 0;
 };
 
 #endif // GAMESCENE_H

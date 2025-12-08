@@ -137,6 +137,22 @@ build CMakeFiles/Mario_.dir/life.cpp.obj: CXX_COMPILER__Mario__unscanned_Debug C
   OBJECT_DIR = CMakeFiles\Mario_.dir
   OBJECT_FILE_DIR = CMakeFiles\Mario_.dir
 
+build CMakeFiles/Mario_.dir/enemy.cpp.obj: CXX_COMPILER__Mario__unscanned_Debug C$:/Users/boodi/OneDrive/Documents/Mario_/enemy.cpp || cmake_object_order_depends_target_Mario_
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Mario_.dir\enemy.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/Mario__autogen/include -isystem C:/Qt/6.10.1/mingw_64/include/QtCore -isystem C:/Qt/6.10.1/mingw_64/include -isystem C:/Qt/6.10.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\Mario_.dir
+  OBJECT_FILE_DIR = CMakeFiles\Mario_.dir
+
+build CMakeFiles/Mario_.dir/bonusblock.cpp.obj: CXX_COMPILER__Mario__unscanned_Debug C$:/Users/boodi/OneDrive/Documents/Mario_/bonusblock.cpp || cmake_object_order_depends_target_Mario_
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\Mario_.dir\bonusblock.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/Mario__autogen/include -isystem C:/Qt/6.10.1/mingw_64/include/QtCore -isystem C:/Qt/6.10.1/mingw_64/include -isystem C:/Qt/6.10.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\Mario_.dir
+  OBJECT_FILE_DIR = CMakeFiles\Mario_.dir
+
 build CMakeFiles/Mario_.dir/Mario__autogen/EWIEGA46WW/qrc_resources.cpp.obj: CXX_COMPILER__Mario__unscanned_Debug C$:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/Mario__autogen/EWIEGA46WW/qrc_resources.cpp || cmake_object_order_depends_target_Mario_
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\Mario_.dir\Mario__autogen\EWIEGA46WW\qrc_resources.cpp.obj.d
@@ -153,7 +169,7 @@ build CMakeFiles/Mario_.dir/Mario__autogen/EWIEGA46WW/qrc_resources.cpp.obj: CXX
 #############################################
 # Link the executable Mario_.exe
 
-build Mario_.exe: CXX_EXECUTABLE_LINKER__Mario__Debug CMakeFiles/Mario_.dir/Mario__autogen/mocs_compilation.cpp.obj CMakeFiles/Mario_.dir/main.cpp.obj CMakeFiles/Mario_.dir/game.cpp.obj CMakeFiles/Mario_.dir/player.cpp.obj CMakeFiles/Mario_.dir/inputhandler.cpp.obj CMakeFiles/Mario_.dir/gamescene.cpp.obj CMakeFiles/Mario_.dir/gameview.cpp.obj CMakeFiles/Mario_.dir/score.cpp.obj CMakeFiles/Mario_.dir/platform.cpp.obj CMakeFiles/Mario_.dir/spike.cpp.obj CMakeFiles/Mario_.dir/life.cpp.obj CMakeFiles/Mario_.dir/Mario__autogen/EWIEGA46WW/qrc_resources.cpp.obj | C$:/Qt/6.10.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.1/mingw_64/lib/libQt6EntryPoint.a || Mario__autogen Mario__autogen_timestamp_deps
+build Mario_.exe: CXX_EXECUTABLE_LINKER__Mario__Debug CMakeFiles/Mario_.dir/Mario__autogen/mocs_compilation.cpp.obj CMakeFiles/Mario_.dir/main.cpp.obj CMakeFiles/Mario_.dir/game.cpp.obj CMakeFiles/Mario_.dir/player.cpp.obj CMakeFiles/Mario_.dir/inputhandler.cpp.obj CMakeFiles/Mario_.dir/gamescene.cpp.obj CMakeFiles/Mario_.dir/gameview.cpp.obj CMakeFiles/Mario_.dir/score.cpp.obj CMakeFiles/Mario_.dir/platform.cpp.obj CMakeFiles/Mario_.dir/spike.cpp.obj CMakeFiles/Mario_.dir/life.cpp.obj CMakeFiles/Mario_.dir/enemy.cpp.obj CMakeFiles/Mario_.dir/bonusblock.cpp.obj CMakeFiles/Mario_.dir/Mario__autogen/EWIEGA46WW/qrc_resources.cpp.obj | C$:/Qt/6.10.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.1/mingw_64/lib/libQt6EntryPoint.a || Mario__autogen Mario__autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.10.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.10.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.10.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.10.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -257,7 +273,7 @@ build Mario__autogen/timestamp Mario__autogen/mocs_compilation.cpp | ${cmake_nin
 #############################################
 # Custom command for Mario__autogen\EWIEGA46WW\qrc_resources.cpp
 
-build Mario__autogen/EWIEGA46WW/qrc_resources.cpp | ${cmake_ninja_workdir}Mario__autogen/EWIEGA46WW/qrc_resources.cpp: CUSTOM_COMMAND C$:/Users/boodi/OneDrive/Documents/Mario_/resources.qrc CMakeFiles/Mario__autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json C$:/Users/boodi/OneDrive/Documents/Mario_/images/pipe.png C$:/Users/boodi/OneDrive/Documents/Mario_/images/scene.png C$:/Users/boodi/OneDrive/Documents/Mario_/images/mario.png C$:/Users/boodi/OneDrive/Documents/Mario_/images/brick.jpg C$:/Users/boodi/OneDrive/Documents/Mario_/images/spike.png C$:/Qt/6.10.1/mingw_64/bin/rcc.exe C$:/Qt/6.10.1/mingw_64/bin/rcc.exe || Mario__autogen Mario__autogen_timestamp_deps
+build Mario__autogen/EWIEGA46WW/qrc_resources.cpp | ${cmake_ninja_workdir}Mario__autogen/EWIEGA46WW/qrc_resources.cpp: CUSTOM_COMMAND C$:/Users/boodi/OneDrive/Documents/Mario_/resources.qrc CMakeFiles/Mario__autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json C$:/Users/boodi/OneDrive/Documents/Mario_/images/pipe.png C$:/Users/boodi/OneDrive/Documents/Mario_/images/bonus.jpg C$:/Users/boodi/OneDrive/Documents/Mario_/images/scene.png C$:/Users/boodi/OneDrive/Documents/Mario_/images/enemy.png C$:/Users/boodi/OneDrive/Documents/Mario_/images/mario.png C$:/Users/boodi/OneDrive/Documents/Mario_/images/brick.jpg C$:/Users/boodi/OneDrive/Documents/Mario_/images/spike.png C$:/Qt/6.10.1/mingw_64/bin/rcc.exe C$:/Qt/6.10.1/mingw_64/bin/rcc.exe || Mario__autogen Mario__autogen_timestamp_deps
   COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\boodi\OneDrive\Documents\Mario_\build\Desktop_Qt_6_10_1_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/Mario__autogen.dir/AutoRcc_resources_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for resources.qrc
   restat = 1

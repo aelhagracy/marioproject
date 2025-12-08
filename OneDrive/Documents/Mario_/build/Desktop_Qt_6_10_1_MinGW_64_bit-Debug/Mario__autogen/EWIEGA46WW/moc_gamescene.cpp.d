@@ -148,19 +148,27 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/6.10.1/mingw_64/include/QtGui/QFont \
   C:/Qt/6.10.1/mingw_64/include/QtGui/QKeyEvent \
   C:/Qt/6.10.1/mingw_64/include/QtGui/QTransform \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qaction.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qbrush.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qcolor.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qcursor.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qevent.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qeventpoint.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qfont.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qfontinfo.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qfontmetrics.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qfontvariableaxis.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qguiapplication.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qicon.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qimage.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qinputdevice.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qinputmethod.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qpainterpath.h \
+  C:/Qt/6.10.1/mingw_64/include/QtGui/qpalette.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qpixmap.h \
@@ -180,13 +188,22 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsProxyWidget \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsScene \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsTextItem \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/QLCDNumber \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicslayoutitem.h \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsproxywidget.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicswidget.h \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qlcdnumber.h \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+  C:/Qt/6.10.1/mingw_64/include/QtWidgets/qwidget.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
@@ -401,6 +418,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/Life.h \
+  C:/Users/boodi/OneDrive/Documents/Mario_/bonusblock.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/platform.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/player.h \
