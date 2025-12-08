@@ -10,6 +10,7 @@ public:
     Life(QGraphicsItem* parent = nullptr, int startingLives = 3);
 
     void decrease();   // lose 1 life
+    void increase();   // gain 1 life
     void reset();      // reset to max lives
     int getLives() const;
 

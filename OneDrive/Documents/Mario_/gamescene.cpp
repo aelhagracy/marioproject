@@ -275,12 +275,21 @@ void GameScene::checkBonusCollisions()
         delete bonus;
         bonus = nullptr;
 
-        invincible = true;
-        invSecondsRemaining = 10;
-        invTimerDisplay->display(invSecondsRemaining);
-        invCountdownTimer->start(1000);
-        invincibleTimer->start(10000);
+        int powerupType = QRandomGenerator::global()->bounded(2);  //randomly selects from 2 powerups
+        if (powerupType == 0){
+            //Extra life
+            playerLives->increase();
+        }
+        else if (powerupType == 1){
+            // Invincibility
+            invincible = true;
+            invSecondsRemaining = 10;
+            invTimerDisplay->display(invSecondsRemaining);
+            invCountdownTimer->start(1000);
+            invincibleTimer->start(10000);
+        }
     }
+
 }
 
 // Invincibility timer

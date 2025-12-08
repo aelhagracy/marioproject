@@ -725,6 +725,8 @@
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h \
+  /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/bonusblock.h \
+  /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/enemy.h \
   /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/inputhandler.h \
   /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/life.h \
   /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/platform.h \
@@ -879,19 +881,27 @@
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QFont \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QKeyEvent \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QTransform \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qaction.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qcolor.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qcursor.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qevent.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qeventpoint.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfont.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfontinfo.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfontmetrics.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfontvariableaxis.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qguiapplication.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qguiapplication_platform.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qicon.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qimage.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qinputdevice.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qinputmethod.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpainterpath.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpen.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h \
@@ -910,10 +920,19 @@
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qvectornd.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsPixmapItem \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsProxyWidget \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsTextItem \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLCDNumber \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsitem.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicslayoutitem.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsproxywidget.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsscene.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicswidget.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlcdnumber.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h \
   /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h \
-  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h \
+  /Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h

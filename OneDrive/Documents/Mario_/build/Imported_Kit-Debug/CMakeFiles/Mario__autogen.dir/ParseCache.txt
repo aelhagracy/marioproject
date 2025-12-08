@@ -2496,7 +2496,9 @@
  mdp:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h
  mdp:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h
  mdp:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h
+ mdp:/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/bonusblock.h
  mdp:/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug/Mario__autogen/moc_predefs.h
+ mdp:/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/enemy.h
  mdp:/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/gamescene.h
  mdp:/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/inputhandler.h
  mdp:/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/life.h
@@ -2652,19 +2654,27 @@
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QFont
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QKeyEvent
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/QTransform
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qaction.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qbitmap.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qbrush.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qcolor.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qcursor.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qevent.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qeventpoint.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfont.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfontinfo.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfontmetrics.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qfontvariableaxis.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qguiapplication.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qguiapplication_platform.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qicon.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qimage.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qinputdevice.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qinputmethod.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qkeysequence.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpaintdevice.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpainterpath.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpalette.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpen.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixelformat.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qpixmap.h
@@ -2683,16 +2693,26 @@
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qvectornd.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtGui.framework/Versions/A/Headers/qwindowdefs.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsPixmapItem
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsProxyWidget
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsScene
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QGraphicsTextItem
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/QLCDNumber
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qframe.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsitem.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicslayoutitem.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsproxywidget.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicsscene.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qgraphicswidget.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qlcdnumber.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qsizepolicy.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgets-config.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsexports.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qtwidgetsglobal.h
+ mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtWidgets.framework/Versions/A/Headers/qwidget.h
 /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/life.h
 /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/gameview.h
 /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/game.h
+/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/bonusblock.h
 /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/platform.h
 /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/inputhandler.h
  mmc:Q_OBJECT
@@ -3525,3 +3545,4 @@
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h
  mdp:/Users/mariamelshimi/Qt/6.10.0/macos/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h
 /Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/enemy.cpp
+/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/bonusblock.cpp

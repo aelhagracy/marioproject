@@ -16,6 +16,12 @@ void Life::decrease()
     }
 }
 
+void Life::increase()
+{
+    ++lives;
+    updateText();
+}
+
 void Life::reset()
 {
     lives = maxLives;

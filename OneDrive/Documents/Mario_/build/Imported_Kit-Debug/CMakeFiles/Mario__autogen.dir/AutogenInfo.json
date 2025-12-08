@@ -355,6 +355,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/bonusblock.h",
+			"MU",
+			"EWIEGA46WW/moc_bonusblock.cpp",
+			null
+		],
+		[
 			"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/enemy.h",
 			"MU",
 			"EWIEGA46WW/moc_enemy.cpp",
@@ -474,6 +480,11 @@
 	"SETTINGS_FILE" : "/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/build/Imported_Kit-Debug/CMakeFiles/Mario__autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/bonusblock.cpp",
+			"MU",
+			null
+		],
 		[
 			"/Users/mariamelshimi/Desktop/marioproject/OneDrive/Documents/Mario_/enemy.cpp",
 			"MU",
