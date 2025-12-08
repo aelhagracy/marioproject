@@ -14,6 +14,7 @@
 #include "platform.h"
 #include "Life.h"
 #include "bonusblock.h"
+#include "enemy.h"
 
 class GameScene : public QGraphicsScene
 {
@@ -23,7 +24,7 @@ public:
 
 signals:
     void gameFinished();   // level complete
-    void playerDied();     // spike kill
+    void playerDied();     // player death
 
 protected:
     void keyPressEvent(QKeyEvent* event) override;
@@ -31,15 +32,17 @@ protected:
 
 private slots:
     void updateGame();
-    void onPlayerDied();         // handle player death
-    void endInvincibility();     // turn off invincibility
-    void updateInvTimer();       // update countdown display
+    void endInvincibility();
 
 private:
     void spawnSpikes();
     void checkSpikeCollisions();
     void checkEnemyCollisions();
-    void checkBonusCollisions(); // check player-bonus collision
+    void checkBonusCollisions();
+    void loadLevel(int level);
+    void showLevelPopup();
+    void handleGameOver();
+    void updateInvTimer();
 
 private:
     Player* player;
@@ -48,28 +51,27 @@ private:
     Score* score;
     int lastX = 0;
 
-    // Scene boundaries
     int sceneWidth;
     int sceneHeight;
 
-    // Spike spawning
     static int farthestSpike;
 
-    // Lives system
+    // Lives
     Life* playerLives;
 
     // Invincibility
-    bool invincible = false;
+    bool invincible;
     QTimer* invincibleTimer;
+    QTimer* invCountdownTimer;
+    QLCDNumber* invTimerDisplay;
+    QGraphicsProxyWidget* invTimerProxy;
+    int invSecondsRemaining;
 
     // Bonus
     bonusblock* bonus;
 
-    // Invincibility timer display
-    QLCDNumber* invTimerDisplay;
-    QGraphicsProxyWidget* invTimerProxy;
-    QTimer* invCountdownTimer;
-    int invSecondsRemaining = 0;
+    // Leveling
+    int currentLevel;
 };
 
 #endif // GAMESCENE_H

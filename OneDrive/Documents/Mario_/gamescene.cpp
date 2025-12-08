@@ -29,24 +29,6 @@ GameScene::GameScene()
 
     input = new InputHandler(player);
 
-    // Floating platforms
-    platform* b1 = new platform(90, 40, ":/images/brick.jpg"); b1->setPos(300, 300); b1->setZValue(3); addItem(b1);
-    platform* b2 = new platform(100, 40, ":/images/brick.jpg"); b2->setPos(700, 290); b2->setZValue(3); addItem(b2);
-    platform* b3 = new platform(90, 40, ":/images/brick.jpg"); b3->setPos(1100, 300); b3->setZValue(3); addItem(b3);
-    platform* b4 = new platform(100, 40, ":/images/brick.jpg"); b4->setPos(1600, 290); b4->setZValue(3); addItem(b4);
-    platform* b5 = new platform(90, 40, ":/images/brick.jpg"); b5->setPos(2000, 280); b5->setZValue(3); addItem(b5);
-    platform* b6 = new platform(100, 40, ":/images/brick.jpg"); b6->setPos(2500, 300); b6->setZValue(3); addItem(b6);
-    platform* b7 = new platform(90, 40, ":/images/brick.jpg"); b7->setPos(3000, 300); b7->setZValue(3); addItem(b7);
-    platform* b8 = new platform(100, 40, ":/images/brick.jpg"); b8->setPos(3600, 290); b8->setZValue(3); addItem(b8);
-    platform* b9 = new platform(90, 40, ":/images/brick.jpg"); b9->setPos(4100, 300); b9->setZValue(3); addItem(b9);
-    platform* b10 = new platform(100, 40, ":/images/brick.jpg"); b10->setPos(4700, 290); b10->setZValue(3); addItem(b10);
-
-    // Enemies
-    Enemy* enemy1 = new Enemy(); enemy1->setPos(400, 404); enemy1->setZValue(4); addItem(enemy1);
-    Enemy* enemy2 = new Enemy(); enemy2->setPos(1700, 404); enemy2->setZValue(4); addItem(enemy2);
-    Enemy* enemy3 = new Enemy(); enemy3->setPos(2200, 404); enemy3->setZValue(4); addItem(enemy3);
-    Enemy* enemy4 = new Enemy(); enemy4->setPos(2800, 404); enemy4->setZValue(4); addItem(enemy4);
-
     // Score
     score = new Score();
     addItem(score);
@@ -58,7 +40,7 @@ GameScene::GameScene()
     playerLives = new Life(nullptr, 3);
     addItem(playerLives);
     playerLives->setFlag(QGraphicsItem::ItemIgnoresTransformations);
-    playerLives->setPos(150, 150);
+    playerLives->setPos(150, 20);
 
     // Invincibility timer
     invincible = false;
@@ -70,29 +52,18 @@ GameScene::GameScene()
     invTimerDisplay = new QLCDNumber(2);
     invTimerDisplay->setSegmentStyle(QLCDNumber::Flat);
     invTimerDisplay->display(0);
-    invTimerDisplay->setStyleSheet("background:transparent; color:yellow;");
-
-    invTimerProxy = addWidget(invTimerDisplay); // add via proxy
+    invTimerDisplay->setStyleSheet("background:transparent; color:yellow; font: 16pt 'Arial';");
+    invTimerProxy = addWidget(invTimerDisplay);
     invTimerProxy->setZValue(5);
     invTimerProxy->setPos(300, 20);
-
     invCountdownTimer = new QTimer(this);
     connect(invCountdownTimer, &QTimer::timeout, this, &GameScene::updateInvTimer);
     invSecondsRemaining = 0;
 
-    // Spawn initial spikes
-    spawnSpikes();
+    currentLevel = 1;
 
-    // Bonus block (random location)
-    bonus = new bonusblock();
-    bonus->setPixmap(QPixmap(":/images/bonus.jpg").scaled(40, 40));
-
-    int bonusX = QRandomGenerator::global()->bounded(200, sceneWidth - 100);
-    int bonusY = QRandomGenerator::global()->bounded(150, 350);
-    bonus->setPos(bonusX, bonusY);
-
-    bonus->setZValue(10);
-    addItem(bonus);
+    // Load first level
+    loadLevel(currentLevel);
 
     // Main loop
     loop = new QTimer(this);
@@ -100,21 +71,109 @@ GameScene::GameScene()
     loop->start(16);
 }
 
-// Spawn spikes
-void GameScene::spawnSpikes()
+void GameScene::loadLevel(int level)
 {
-    int minX = 600;
-    int maxX = sceneWidth - 200;
-    int spikesCount = 3;
+    // Clear existing platforms, spikes, enemies, bonus
+    QList<QGraphicsItem*> itemsToRemove;
+    for (auto item : items())
+    {
+        if (dynamic_cast<platform*>(item) || dynamic_cast<Spike*>(item) ||
+            dynamic_cast<Enemy*>(item) || dynamic_cast<bonusblock*>(item))
+        {
+            itemsToRemove.append(item);
+        }
+    }
+    for (auto item : itemsToRemove)
+    {
+        removeItem(item);
+        delete item;
+    }
 
-    for (int i = 0; i < spikesCount; ++i)
+    // Platforms: closer together now
+    int numPlatforms = 10 + level * 2;
+    int x = 300;
+    for (int i = 0; i < numPlatforms; ++i)
+    {
+        int width = 90 + (QRandomGenerator::global()->bounded(2) * 10);
+        int height = 40;
+        platform* plat = new platform(width, height, ":/images/brick.jpg");
+        int y = 250 + QRandomGenerator::global()->bounded(120); // slightly less variation
+        plat->setPos(x, y);
+        plat->setZValue(3);
+        addItem(plat);
+        x += 300 + QRandomGenerator::global()->bounded(100); // closer spacing
+    }
+
+    // Spikes
+    int numSpikes = 3 + level;
+    for (int i = 0; i < numSpikes; ++i)
     {
         Spike* spike = new Spike();
-        int x = QRandomGenerator::global()->bounded(minX, maxX);
-        int y = 404;
-        spike->setPos(x, y);
+        int sx = QRandomGenerator::global()->bounded(600, sceneWidth - 200);
+        spike->setPos(sx, 404);
         spike->setZValue(4);
         addItem(spike);
+    }
+
+    // Enemies
+    int numEnemies = 2 + level;
+    for (int i = 0; i < numEnemies; ++i)
+    {
+        Enemy* enemy = new Enemy();
+        int ex = QRandomGenerator::global()->bounded(400, sceneWidth - 300);
+        enemy->setPos(ex, 404);
+        enemy->setZValue(4);
+        addItem(enemy);
+    }
+
+    // Bonus block: random
+    bonus = new bonusblock();
+    bonus->setPixmap(QPixmap(":/images/bonus.jpg").scaled(40, 40));
+    int bx = QRandomGenerator::global()->bounded(200, sceneWidth - 200);
+    int by = QRandomGenerator::global()->bounded(100, 350);
+    bonus->setPos(bx, by);
+    bonus->setZValue(10);
+    addItem(bonus);
+
+    showLevelPopup();
+}
+
+void GameScene::showLevelPopup()
+{
+    if (currentLevel > 5)
+    {
+        QMessageBox::information(nullptr, "Game Complete",
+                                 QString("Congratulations! You finished all 5 levels!\nTotal Score: %1").arg(score->getScore()));
+        // Ask restart or quit
+        QMessageBox::StandardButton reply = QMessageBox::question(nullptr, "Game Finished",
+                                                                  "Do you want to restart the game?",
+                                                                  QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+        if (reply == QMessageBox::Yes)
+        {
+            currentLevel = 1;
+            score->reset();
+            playerLives->reset();
+            player->setPos(100, -420);
+            loadLevel(currentLevel);
+            loop->start(16);
+        }
+        else
+        {
+            if (!views().isEmpty())
+                views().first()->window()->close();
+        }
+        return;
+    }
+
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(nullptr, "Level Start",
+                                  QString("You will enter Level %1. Continue?").arg(currentLevel),
+                                  QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+    if (reply == QMessageBox::No)
+    {
+        if (!views().isEmpty())
+            views().first()->window()->close();
     }
 }
 
@@ -133,7 +192,11 @@ void GameScene::updateGame()
     checkBonusCollisions();
 
     int dx = player->x() - lastX;
-    if (dx >= 10) { score->increase(dx / 10); lastX += (dx / 10) * 10; }
+    if (dx >= 10)
+    {
+        score->increase(dx / 10);
+        lastX += (dx / 10) * 10;
+    }
 
     if (!views().isEmpty())
     {
@@ -144,7 +207,16 @@ void GameScene::updateGame()
 
     if (!views().isEmpty()) views().first()->centerOn(player);
 
-    if (player->x() > sceneWidth - 100) { loop->stop(); emit gameFinished(); }
+    // Level complete
+    if (player->x() > sceneWidth - 100)
+    {
+        loop->stop();
+        currentLevel++;
+        loadLevel(currentLevel);
+        player->setPos(100, -420);
+        lastX = player->x();
+        loop->start(16);
+    }
 }
 
 // Spike collisions
@@ -158,9 +230,12 @@ void GameScene::checkSpikeCollisions()
         {
             invincible = true;
             invincibleTimer->start(1000);
-
             playerLives->decrease();
-            if (playerLives->getLives() <= 0) { onPlayerDied(); return; }
+            if (playerLives->getLives() <= 0)
+            {
+                handleGameOver();
+                return;
+            }
             else { player->setPos(player->x(), player->y() - 50); }
             break;
         }
@@ -178,20 +253,22 @@ void GameScene::checkEnemyCollisions()
         {
             invincible = true;
             invincibleTimer->start(1000);
-
             playerLives->decrease();
-            if (playerLives->getLives() <= 0) { onPlayerDied(); return; }
+            if (playerLives->getLives() <= 0)
+            {
+                handleGameOver();
+                return;
+            }
             else { player->setPos(player->x(), player->y() - 50); }
             break;
         }
     }
 }
 
-// Bonus collision
+// Handle bonus collisions
 void GameScene::checkBonusCollisions()
 {
     if (!bonus) return;
-
     if (player->collidesWithItem(bonus))
     {
         removeItem(bonus);
@@ -199,14 +276,14 @@ void GameScene::checkBonusCollisions()
         bonus = nullptr;
 
         invincible = true;
-        invSecondsRemaining = 10;   // 10 seconds
+        invSecondsRemaining = 10;
         invTimerDisplay->display(invSecondsRemaining);
         invCountdownTimer->start(1000);
-        invincibleTimer->start(10000);  // 10 seconds
+        invincibleTimer->start(10000);
     }
 }
 
-// Update invincibility countdown
+// Invincibility timer
 void GameScene::updateInvTimer()
 {
     invSecondsRemaining--;
@@ -221,7 +298,6 @@ void GameScene::updateInvTimer()
     }
 }
 
-// End invincibility
 void GameScene::endInvincibility()
 {
     invincible = false;
@@ -230,46 +306,28 @@ void GameScene::endInvincibility()
     invCountdownTimer->stop();
 }
 
-// Player died
-void GameScene::onPlayerDied()
+// Handle game over (lives = 0)
+void GameScene::handleGameOver()
 {
     loop->stop();
-
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(nullptr, "Game Over",
-                                  "You died! Would you like to retry again?",
+                                  QString("You lost all lives!\nTotal Score: %1\nRestart?").arg(score->getScore()),
                                   QMessageBox::Yes | QMessageBox::No,
                                   QMessageBox::Yes);
 
     if (reply == QMessageBox::Yes)
     {
-        player->setPos(100, -420);
+        currentLevel = 1;
         score->reset();
-        lastX = player->x();
         playerLives->reset();
-        invincible = false;
-
-        QList<QGraphicsItem*> itemsToRemove;
-        for (auto item : items()) { if (dynamic_cast<Spike*>(item)) itemsToRemove.append(item); }
-        for (auto item : itemsToRemove) { removeItem(item); delete item; }
-
-        spawnSpikes();
-
-        // Respawn bonus at random location
-        bonus = new bonusblock();
-        bonus->setPixmap(QPixmap(":/images/bonus.jpg").scaled(40, 40));
-
-        int bonusX = QRandomGenerator::global()->bounded(200, sceneWidth - 100);
-        int bonusY = QRandomGenerator::global()->bounded(150, 350);
-        bonus->setPos(bonusX, bonusY);
-
-        bonus->setZValue(10);
-        addItem(bonus);
-
+        player->setPos(100, -420);
+        loadLevel(currentLevel);
         loop->start(16);
     }
     else
     {
-        if (!views().isEmpty()) views().first()->window()->close();
+        if (!views().isEmpty())
+            views().first()->window()->close();
     }
 }

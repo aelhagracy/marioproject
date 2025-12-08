@@ -419,6 +419,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/Life.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/bonusblock.h \
+  C:/Users/boodi/OneDrive/Documents/Mario_/enemy.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/inputhandler.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/platform.h \
   C:/Users/boodi/OneDrive/Documents/Mario_/player.h \
