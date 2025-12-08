@@ -7,6 +7,8 @@
 #include <QGraphicsTextItem>
 #include <QLCDNumber>
 #include <QGraphicsProxyWidget>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 #include "player.h"
 #include "inputhandler.h"
 #include "score.h"
@@ -23,8 +25,8 @@ public:
     GameScene();
 
 signals:
-    void gameFinished();   // level complete
-    void playerDied();     // player death
+    void gameFinished();
+    void playerDied();
 
 protected:
     void keyPressEvent(QKeyEvent* event) override;
@@ -33,6 +35,7 @@ protected:
 private slots:
     void updateGame();
     void endInvincibility();
+    void updateInvTimer();
 
 private:
     void spawnSpikes();
@@ -42,7 +45,6 @@ private:
     void loadLevel(int level);
     void showLevelPopup();
     void handleGameOver();
-    void updateInvTimer();
 
 private:
     Player* player;
@@ -50,28 +52,20 @@ private:
     QTimer* loop;
     Score* score;
     int lastX = 0;
-
     int sceneWidth;
     int sceneHeight;
-
     static int farthestSpike;
-
-    // Lives
     Life* playerLives;
-
-    // Invincibility
     bool invincible;
     QTimer* invincibleTimer;
     QTimer* invCountdownTimer;
     QLCDNumber* invTimerDisplay;
     QGraphicsProxyWidget* invTimerProxy;
     int invSecondsRemaining;
-
-    // Bonus
     bonusblock* bonus;
-
-    // Leveling
     int currentLevel;
+    QMediaPlayer* themePlayer;
+    QAudioOutput* themeAudio;
 };
 
-#endif // GAMESCENE_H
+#endif

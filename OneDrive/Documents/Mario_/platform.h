@@ -9,4 +9,4 @@ public:
     platform(int width, int height, const QString& imgPath);
 };
 
-#endif // PLATFORM_H
+#endif

@@ -6,22 +6,24 @@
 #include <QKeyEvent>
 #include <QRandomGenerator>
 #include <QMessageBox>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 
 int GameScene::farthestSpike = 1200;
 
 GameScene::GameScene()
 {
-    // Scene dimensions
+
     sceneWidth = 6000;
     sceneHeight = 500;
     setSceneRect(0, 0, sceneWidth, sceneHeight);
 
-    // Background
+
     auto background = new QGraphicsPixmapItem(QPixmap(":/images/scene.png").scaled(sceneWidth, sceneHeight));
     background->setZValue(0);
     addItem(background);
 
-    // Player
+
     player = new Player();
     player->setPos(100, -420);
     player->setZValue(5);
@@ -29,26 +31,21 @@ GameScene::GameScene()
 
     input = new InputHandler(player);
 
-    // Score
     score = new Score();
     addItem(score);
     score->setFlag(QGraphicsItem::ItemIgnoresTransformations);
     score->setPos(20, 20);
     lastX = player->x();
 
-    // Lives
     playerLives = new Life(nullptr, 3);
     addItem(playerLives);
     playerLives->setFlag(QGraphicsItem::ItemIgnoresTransformations);
     playerLives->setPos(150, 20);
 
-    // Invincibility timer
     invincible = false;
     invincibleTimer = new QTimer(this);
     invincibleTimer->setSingleShot(true);
     connect(invincibleTimer, &QTimer::timeout, this, &GameScene::endInvincibility);
-
-    // Invincibility display
     invTimerDisplay = new QLCDNumber(2);
     invTimerDisplay->setSegmentStyle(QLCDNumber::Flat);
     invTimerDisplay->display(0);
@@ -62,18 +59,22 @@ GameScene::GameScene()
 
     currentLevel = 1;
 
-    // Load first level
+    themePlayer = new QMediaPlayer(this);
+    themeAudio = new QAudioOutput(this);
+    themePlayer->setAudioOutput(themeAudio);
+    themeAudio->setVolume(0.5);
+    themePlayer->setSource(QUrl("qrc:/sound/theme.wav"));
+    themePlayer->setLoops(QMediaPlayer::Infinite);
+    themePlayer->play();
+
     loadLevel(currentLevel);
 
-    // Main loop
     loop = new QTimer(this);
     connect(loop, &QTimer::timeout, this, &GameScene::updateGame);
     loop->start(16);
 }
-
 void GameScene::loadLevel(int level)
 {
-    // Clear existing platforms, spikes, enemies, bonus
     QList<QGraphicsItem*> itemsToRemove;
     for (auto item : items())
     {
@@ -89,7 +90,6 @@ void GameScene::loadLevel(int level)
         delete item;
     }
 
-    // Platforms: closer together now
     int numPlatforms = 10 + level * 2;
     int x = 300;
     for (int i = 0; i < numPlatforms; ++i)
@@ -97,15 +97,16 @@ void GameScene::loadLevel(int level)
         int width = 90 + (QRandomGenerator::global()->bounded(2) * 10);
         int height = 40;
         platform* plat = new platform(width, height, ":/images/brick.jpg");
-        int y = 250 + QRandomGenerator::global()->bounded(120); // slightly less variation
+        int y = 250 + QRandomGenerator::global()->bounded(120);
         plat->setPos(x, y);
         plat->setZValue(3);
         addItem(plat);
-        x += 300 + QRandomGenerator::global()->bounded(100); // closer spacing
+        x += 300 + QRandomGenerator::global()->bounded(100);
     }
 
-    // Spikes
-    int numSpikes = 3 + level;
+
+    int baseSpikes = 3;
+    int numSpikes = baseSpikes + level;
     for (int i = 0; i < numSpikes; ++i)
     {
         Spike* spike = new Spike();
@@ -115,8 +116,9 @@ void GameScene::loadLevel(int level)
         addItem(spike);
     }
 
-    // Enemies
-    int numEnemies = 2 + level;
+
+    int baseEnemies = 2;
+    int numEnemies = baseEnemies + level;
     for (int i = 0; i < numEnemies; ++i)
     {
         Enemy* enemy = new Enemy();
@@ -126,25 +128,40 @@ void GameScene::loadLevel(int level)
         addItem(enemy);
     }
 
-    // Bonus block: random
-    bonus = new bonusblock();
-    bonus->setPixmap(QPixmap(":/images/bonus.jpg").scaled(40, 40));
-    int bx = QRandomGenerator::global()->bounded(200, sceneWidth - 200);
-    int by = QRandomGenerator::global()->bounded(100, 350);
-    bonus->setPos(bx, by);
-    bonus->setZValue(10);
-    addItem(bonus);
-
+    if (level >= 3)
+    {
+        bonus = new bonusblock();
+        bonus->setPixmap(QPixmap(":/images/bonus.jpg").scaled(40, 40));
+        int bx = QRandomGenerator::global()->bounded(200, sceneWidth - 200);
+        int by = QRandomGenerator::global()->bounded(100, 350);
+        bonus->setPos(bx, by);
+        bonus->setZValue(10);
+        addItem(bonus);
+    }
+    else
+    {
+        bonus = nullptr;
+    }
     showLevelPopup();
 }
+
 
 void GameScene::showLevelPopup()
 {
     if (currentLevel > 5)
     {
+        if (themePlayer->playbackState() == QMediaPlayer::PlayingState)
+            themePlayer->stop();
+        QMediaPlayer* victoryPlayer = new QMediaPlayer(this);
+        QAudioOutput* victoryAudio = new QAudioOutput(this);
+        victoryPlayer->setAudioOutput(victoryAudio);
+        victoryAudio->setVolume(0.7);
+        victoryPlayer->setSource(QUrl("qrc:/sound/victory.wav"));
+        victoryPlayer->play();
+
         QMessageBox::information(nullptr, "Game Complete",
                                  QString("Congratulations! You finished all 5 levels!\nTotal Score: %1").arg(score->getScore()));
-        // Ask restart or quit
+
         QMessageBox::StandardButton reply = QMessageBox::question(nullptr, "Game Finished",
                                                                   "Do you want to restart the game?",
                                                                   QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
@@ -155,6 +172,7 @@ void GameScene::showLevelPopup()
             playerLives->reset();
             player->setPos(100, -420);
             loadLevel(currentLevel);
+            themePlayer->play();
             loop->start(16);
         }
         else
@@ -177,11 +195,8 @@ void GameScene::showLevelPopup()
     }
 }
 
-// Key input
 void GameScene::keyPressEvent(QKeyEvent* event) { input->keyPressed(event->key()); }
 void GameScene::keyReleaseEvent(QKeyEvent* event) { input->keyReleased(event->key()); }
-
-// Main loop
 void GameScene::updateGame()
 {
     player->applyGravity();
@@ -206,8 +221,6 @@ void GameScene::updateGame()
     }
 
     if (!views().isEmpty()) views().first()->centerOn(player);
-
-    // Level complete
     if (player->x() > sceneWidth - 100)
     {
         loop->stop();
@@ -219,7 +232,6 @@ void GameScene::updateGame()
     }
 }
 
-// Spike collisions
 void GameScene::checkSpikeCollisions()
 {
     if (invincible) return;
@@ -229,20 +241,23 @@ void GameScene::checkSpikeCollisions()
         if (dynamic_cast<Spike*>(item))
         {
             invincible = true;
+            player->playDamage();
             invincibleTimer->start(1000);
             playerLives->decrease();
+
             if (playerLives->getLives() <= 0)
             {
                 handleGameOver();
                 return;
             }
-            else { player->setPos(player->x(), player->y() - 50); }
+            else {
+                player->setPos(player->x(), player->y() - 50);
+            }
             break;
         }
     }
 }
 
-// Enemy collisions
 void GameScene::checkEnemyCollisions()
 {
     if (invincible) return;
@@ -252,20 +267,23 @@ void GameScene::checkEnemyCollisions()
         if (dynamic_cast<Enemy*>(item))
         {
             invincible = true;
+            player->playDamage();
             invincibleTimer->start(1000);
             playerLives->decrease();
+
             if (playerLives->getLives() <= 0)
             {
                 handleGameOver();
                 return;
             }
-            else { player->setPos(player->x(), player->y() - 50); }
+            else {
+                player->setPos(player->x(), player->y() - 50);
+            }
             break;
         }
     }
 }
 
-// Handle bonus collisions
 void GameScene::checkBonusCollisions()
 {
     if (!bonus) return;
@@ -275,13 +293,11 @@ void GameScene::checkBonusCollisions()
         delete bonus;
         bonus = nullptr;
 
-        int powerupType = QRandomGenerator::global()->bounded(2);  //randomly selects from 2 powerups
+        int powerupType = QRandomGenerator::global()->bounded(2);
         if (powerupType == 0){
-            //Extra life
             playerLives->increase();
         }
         else if (powerupType == 1){
-            // Invincibility
             invincible = true;
             invSecondsRemaining = 10;
             invTimerDisplay->display(invSecondsRemaining);
@@ -289,10 +305,8 @@ void GameScene::checkBonusCollisions()
             invincibleTimer->start(10000);
         }
     }
-
 }
 
-// Invincibility timer
 void GameScene::updateInvTimer()
 {
     invSecondsRemaining--;
@@ -315,7 +329,6 @@ void GameScene::endInvincibility()
     invCountdownTimer->stop();
 }
 
-// Handle game over (lives = 0)
 void GameScene::handleGameOver()
 {
     loop->stop();
@@ -332,6 +345,7 @@ void GameScene::handleGameOver()
         playerLives->reset();
         player->setPos(100, -420);
         loadLevel(currentLevel);
+        themePlayer->play();
         loop->start(16);
     }
     else

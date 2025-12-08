@@ -11,4 +11,4 @@ public:
     bool collected = false;
 };
 
-#endif // bonusblock_h
+#endif

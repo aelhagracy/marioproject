@@ -9,15 +9,15 @@ class Life : public QGraphicsTextItem
 public:
     Life(QGraphicsItem* parent = nullptr, int startingLives = 3);
 
-    void decrease();   // lose 1 life
-    void increase();   // gain 1 life
-    void reset();      // reset to max lives
+    void decrease();
+    void increase();
+    void reset();
     int getLives() const;
 
 private:
     int lives;
     const int maxLives;
-    void updateText(); // update on-screen display
+    void updateText();
 };
 
-#endif // LIFE_H
+#endif

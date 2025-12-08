@@ -12,4 +12,4 @@ public:
     Spike();
 };
 
-#endif // SPIKE_H
+#endif

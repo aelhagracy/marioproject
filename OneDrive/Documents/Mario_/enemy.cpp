@@ -11,7 +11,6 @@ Enemy::Enemy(QGraphicsItem *parent)
     direction = 1;
     speed = 2;
 
-    //timer to move the enemy
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Enemy::moveEnemy);
     timer->start(30);
@@ -20,7 +19,7 @@ Enemy::Enemy(QGraphicsItem *parent)
 void Enemy::moveEnemy(){
     setX(x() + direction * speed);
 
-    //everse direction at spikes
+
     QList<QGraphicsItem*> collidingEnemy = collidingItems();
     for (auto item: collidingEnemy){
         if (dynamic_cast<Spike*>(item)){
@@ -29,7 +28,7 @@ void Enemy::moveEnemy(){
             break;
         }
 
-    //reverse direction at edge
+
     if (x() <= 0 || x() + boundingRect().width() >= scene()->width()){
         direction *= -1;
         }

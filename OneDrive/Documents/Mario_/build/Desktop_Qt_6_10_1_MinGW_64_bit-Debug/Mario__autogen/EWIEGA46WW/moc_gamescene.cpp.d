@@ -187,6 +187,17 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/6.10.1/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/QAudioOutput \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/QMediaPlayer \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/QSoundEffect \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qaudio.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qaudiooutput.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qmediaplayer.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qsoundeffect.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qtaudio.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsProxyWidget \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsScene \

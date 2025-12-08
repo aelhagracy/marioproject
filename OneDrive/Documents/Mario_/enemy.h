@@ -24,4 +24,4 @@ private:
     int speed;
 };
 
-#endif // ENEMY_H
+#endif

@@ -15,7 +15,11 @@
 		"C:/Users/boodi/OneDrive/Documents/Mario_/images/enemy.png",
 		"C:/Users/boodi/OneDrive/Documents/Mario_/images/mario.png",
 		"C:/Users/boodi/OneDrive/Documents/Mario_/images/brick.jpg",
-		"C:/Users/boodi/OneDrive/Documents/Mario_/images/spike.png"
+		"C:/Users/boodi/OneDrive/Documents/Mario_/images/spike.png",
+		"C:/Users/boodi/OneDrive/Documents/Mario_/sound/theme.wav",
+		"C:/Users/boodi/OneDrive/Documents/Mario_/sound/jump.wav",
+		"C:/Users/boodi/OneDrive/Documents/Mario_/sound/dmg.wav",
+		"C:/Users/boodi/OneDrive/Documents/Mario_/sound/victory.wav"
 	],
 	"LOCK_FILE" : "C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-Debug/CMakeFiles/Mario__autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

@@ -121,6 +121,7 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/6.10.1/mingw_64/include/QtCore/qtversionchecks.h \
   C:/Qt/6.10.1/mingw_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.10.1/mingw_64/include/QtCore/qtypes.h \
+  C:/Qt/6.10.1/mingw_64/include/QtCore/qurl.h \
   C:/Qt/6.10.1/mingw_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.10.1/mingw_64/include/QtCore/qvariant.h \
   C:/Qt/6.10.1/mingw_64/include/QtCore/qvarlengtharray.h \
@@ -143,6 +144,12 @@ C:/Users/boodi/OneDrive/Documents/Mario_/build/Desktop_Qt_6_10_1_MinGW_64_bit-De
   C:/Qt/6.10.1/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/QSoundEffect \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qaudio.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qsoundeffect.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
+  C:/Qt/6.10.1/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/QGraphicsPixmapItem \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
   C:/Qt/6.10.1/mingw_64/include/QtWidgets/qtwidgets-config.h \

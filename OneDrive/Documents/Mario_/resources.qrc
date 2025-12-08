@@ -8,5 +8,9 @@
         <file>images/spike.png</file>
         <file>images/enemy.png</file>
         <file>images/bonus.jpg</file>
+        <file>sound/jump.wav</file>
+        <file>sound/dmg.wav</file>
+        <file>sound/theme.wav</file>
+        <file>sound/victory.wav</file>
     </qresource>
 </RCC>
