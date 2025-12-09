@@ -34,6 +34,15 @@ void Game::start()
     update();
 }
 
+void Game::restart()
+{
+    score.reset();          
+    life = Life(3);         
+    state = GameState::Waiting;
+    update();
+}
+
+
 void Game::end()
 {
     state = GameState::GameOver;
@@ -98,6 +107,7 @@ void Game::keyPressEvent(QKeyEvent *event)
 
     QWidget::keyPressEvent(event);
 }
+
 
 
 
