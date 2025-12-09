@@ -21,9 +21,10 @@ public:
 
 protected:
     void paintEvent(QPaintEvent *event) override;
-// Add this
-    void keyPressEvent(QKeyEvent *event) override;
 
+    void keyPressEvent(QKeyEvent *event) override;
+public slots:
+    void onLevelCompleted(int levelNumber)
 
 private:
     GameState state;
@@ -33,3 +34,4 @@ private:
 };
 
 #endif // GAME_H
+
