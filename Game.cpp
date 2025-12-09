@@ -12,6 +12,19 @@ Game::Game(QWidget *parent)
     state(GameState::Waiting)
 {
     level = new Level(1, nullptr, this);
+    score(100),
+    life(3),
+    level(nullptr)
+
+        {
+        
+    setFocusPolicy(Qt::StrongFocus);
+
+    level = new Level(1, nullptr, this);
+// Question 
+    connect(level, &Level::levelCompleted,
+            this, &Game::onLevelCompleted);
+}
 
 }
 
@@ -60,7 +73,17 @@ void Game::paintEvent(QPaintEvent *event)
 
 }
 
-// Ai code
+
+Void Game::onLevelCompleted(int levelNumber)
+{
+Q_UNUSED(levelNumber);          
+    state = GameState::LevelComplete;
+    update();
+    
+}
+
+//     Detected with the help of AI
+
 void Game::keyPressEvent(QKeyEvent *event)
 {
     if (state == GameState::Waiting &&
@@ -74,6 +97,7 @@ void Game::keyPressEvent(QKeyEvent *event)
 
     QWidget::keyPressEvent(event);
 }
+
 
 
 
