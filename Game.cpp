@@ -104,9 +104,16 @@ void Game::keyPressEvent(QKeyEvent *event)
              level->completeLevel();
             end();
     }
+    // Ai suggestions
+    if ((state == GameState::GameOver || state == GameState::LevelComplete) &&
+    event->key() == Qt::Key_R) {
+    restart();
+}
+
 
     QWidget::keyPressEvent(event);
 }
+
 
 
 
