@@ -92,11 +92,13 @@ void Game::keyPressEvent(QKeyEvent *event)
     }
     else if (state == GameState::Playing &&
              event->key() == Qt::Key_Escape) {
-        end();
+             level->completeLevel();
+            end();
     }
 
     QWidget::keyPressEvent(event);
 }
+
 
 
 
