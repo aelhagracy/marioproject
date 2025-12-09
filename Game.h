@@ -26,6 +26,9 @@ protected:
 public slots:
     void onLevelCompleted(int levelNumber)
 
+public slots:
+    void onLevelCompleted(int levelNumber);
+
 private:
     GameState state;
     Score score;
@@ -34,4 +37,5 @@ private:
 };
 
 #endif // GAME_H
+
 
