@@ -18,6 +18,7 @@ public:
 
     void start();
     void end();
+    void restart();    
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -37,5 +38,6 @@ private:
 };
 
 #endif // GAME_H
+
 
 
